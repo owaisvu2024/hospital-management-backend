@@ -16,6 +16,7 @@ public class User {
     private String password;
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
+    @Column(name = "roles", nullable = false)
     private Set<Role> roles;
 
 

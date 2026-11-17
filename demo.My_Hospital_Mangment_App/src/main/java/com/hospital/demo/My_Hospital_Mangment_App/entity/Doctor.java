@@ -3,7 +3,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -28,5 +30,5 @@ public class Doctor {
             inverseJoinColumns = @JoinColumn(name = "depart_Id")
     )
     @ManyToMany(fetch = FetchType.LAZY)
-    private List<Department>departments;
+    private Set<Department> departments = new HashSet<>();
 }
