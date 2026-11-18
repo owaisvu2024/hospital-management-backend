@@ -55,7 +55,13 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:5173")); // React ka URL
+
+        configuration.setAllowedOrigins(List.of(
+                "http://localhost:5173",
+                "https://hospital-management-frontend-navy.vercel.app"
+
+
+        )); // React ka URL
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT","PATCH", "DELETE", "OPTIONS")); // Yeh methods chalenge
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type")); // Headers allow kiye
         configuration.setAllowCredentials(true);
